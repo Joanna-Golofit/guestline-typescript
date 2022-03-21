@@ -2,11 +2,18 @@ import React from "react";
 import { useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import styles from "./Slider.module.css";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-const Slider = ({ images, id }) => {
-  const [current, setCurrent] = useState(0);
-  const length = images.length;
+// Interface
+interface Props {
+  images: {url: string}[];
+  id: string;
+}
+
+// const Slider = ({ images, id }) => {
+const Slider: React.FC<Props> = ({ images, id }) => {
+  const [current, setCurrent] = useState<number>(0);
+  const length: number = images.length;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -19,6 +26,8 @@ const Slider = ({ images, id }) => {
   if (!Array.isArray(images) || images.length <= 0) {
     return null;
   }
+  console.log(images);
+  // console.table(images);
 
   return (
     <section className={styles.slider}>
@@ -41,9 +50,9 @@ const Slider = ({ images, id }) => {
   );
 };
 
-Slider.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.object).isRequired,
-  id: PropTypes.string.isRequired,
-};
+// Slider.propTypes = {
+//   images: PropTypes.arrayOf(PropTypes.object).isRequired,
+//   id: PropTypes.string.isRequired,
+// };
 
 export default Slider;

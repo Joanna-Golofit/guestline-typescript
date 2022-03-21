@@ -12,6 +12,7 @@ const colors = {
   gray: "A9A9A9",
 };
 
+// const HomePage: React.FC = () => {
 const HomePage = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
