@@ -1,0 +1,27 @@
+.slider {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  /* width: 30%; */
+
+}
+.backArrow {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.387);
+  border-radius: 50%;
+  top: 40%;
+  left: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+.forwardArrow {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.387);
+  border-radius: 50%;
+  top: 40%;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 2;
+}

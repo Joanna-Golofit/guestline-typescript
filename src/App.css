@@ -1,0 +1,17 @@
+body {
+  font-family: "Roboto", "Verdana", "Tahoma", sans-serif;
+  color: #000000;
+  /* font-size: small; */
+}
+
+img {
+  display: block;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

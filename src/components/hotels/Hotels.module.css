@@ -1,0 +1,23 @@
+.card {
+  border: 1px solid black;
+  margin: 15px 0;
+}
+.header {
+  margin: 15px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stars {
+  max-width: fit-content;
+}
+
+.info {
+  display: flex;
+}
+.data {
+  padding: 0 15px;
+}
+.articleAddress {
+  margin: 10px 0;
+}

@@ -1,0 +1,17 @@
+.card {
+  border-top: 1px solid black;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.left {
+  width: 28%;
+  margin-right: 10px;
+}
+.right {
+  width: 72%;
+}
+h4 {
+  margin-bottom: 10px;
+}
