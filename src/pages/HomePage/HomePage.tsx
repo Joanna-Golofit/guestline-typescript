@@ -12,26 +12,36 @@ const colors = {
   gray: "A9A9A9",
 };
 
-// const HomePage: React.FC = () => {
-const HomePage = () => {
-  const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
-  const [capacityAdults, setCapacityAdults] = useState(1);
-  const [capacityChildren, setCapacityChildren] = useState(0);
+interface Hotel {
+  id: string;
+  name: string;
+  description: string;
+  images: { url: string }[];
+  starRating: string;
+  address1: string;
+  address2: string;
+}
+
+const HomePage: React.FC = () => {
+  // const HomePage = () => {
+  const [data, setData] = useState <[] | Hotel[]>([]);
+  const [filteredData, setFilteredData] = useState<[] | Hotel[]>([]);
+  const [capacityAdults, setCapacityAdults] = useState<number>(1);
+  const [capacityChildren, setCapacityChildren] = useState<number>(0);
   // const [capacity, setCapacity] = useState({
   //   adults: 1,
   //   children: 0,
   // });
   const stars = Array(5).fill(0);
-  const [currentValue, setCurrentValue] = useState(0);
-  const [hoverValue, setHoverValue] = useState(undefined);
+  const [currentValue, setCurrentValue] = useState<number>(0);
+  const [hoverValue, setHoverValue] = useState<number | undefined>(undefined);
   const URL = `https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG`;
 
-  const handleClick = (value) => {
+  const handleClick = (value: number) => {
     setCurrentValue(value);
     setFilteredData(data.filter((d) => Number(d.starRating) >= value));
   };
-  const handleMouseOver = (value) => {
+  const handleMouseOver = (value: number) => {
     setHoverValue(value);
   };
   const handleMouseLeave = () => {
@@ -73,12 +83,12 @@ const HomePage = () => {
                 }
                 onClick={() => handleClick(idx + 1)}
                 onMouseOver={() => handleMouseOver(idx + 1)}
-                onMouseLeave={() => handleMouseLeave(idx + 1)}
+                onMouseLeave={() => handleMouseLeave()}
               />
             ))}
           </div>
           <Counter
-            className={styles.adults}
+            // className={styles.adults}
             title="Adults"
             value={capacityAdults}
             onClick={setCapacityAdults}

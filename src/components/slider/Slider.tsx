@@ -6,8 +6,8 @@ import styles from "./Slider.module.css";
 
 // Interface
 interface Props {
-  images: {url: string}[];
-  id: string;
+  images: { url: string }[];
+  id: string; // it should be string.. why doesn't it complain when set to number? cos it's not used as typical number?
 }
 
 // const Slider = ({ images, id }) => {
@@ -15,18 +15,19 @@ const Slider: React.FC<Props> = ({ images, id }) => {
   const [current, setCurrent] = useState<number>(0);
   const length: number = images.length;
 
-  const nextSlide = () => {
+  const nextSlide = (): void => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  const prevSlide = () => {
+  const prevSlide = (): void => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
   if (!Array.isArray(images) || images.length <= 0) {
     return null;
   }
-  console.log(images);
+  // console.log(images);
+  // console.log(typeof id);
   // console.table(images);
 
   return (
