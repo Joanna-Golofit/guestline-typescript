@@ -7,7 +7,12 @@ import { FaStar } from "react-icons/fa";
 import Hotels from "../../components/hotels/Hotels";
 import Counter from "../../components/counter/Counter";
 
-const colors = {
+type Colors = {
+  orange: string;
+  gray: string;
+};
+
+const colors: Colors = {
   orange: "#FFBA5A",
   gray: "A9A9A9",
 };
