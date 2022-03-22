@@ -1,8 +1,14 @@
 import React from "react";
 import styles from "./Counter.module.css";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-const Counter = ({ title, value, onClick }) => {
+interface Props {
+  title: string;
+  value: number;
+  onClick: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const Counter: React.FC<Props> = ({ title, value, onClick }) => {
   return (
     <div className={styles.wrapper}>
       {title}: {""}
@@ -17,10 +23,10 @@ const Counter = ({ title, value, onClick }) => {
   );
 };
 
-Counter.propTypes = {
-  title: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
+// Counter.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   value: PropTypes.number.isRequired,
+//   onClick: PropTypes.func.isRequired,
+// };
 
 export default Counter;

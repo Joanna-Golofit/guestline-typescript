@@ -7,7 +7,7 @@ import styles from "./Slider.module.css";
 // Interface
 interface Props {
   images: { url: string }[];
-  id: string; // it should be string.. why doesn't it complain when set to number? cos it's not used as typical number?
+  id: string; // it should be string.. why doesn't it complain when set to number? cos it's not used as typical number and it doesn't cause a problem?
 }
 
 // const Slider = ({ images, id }) => {

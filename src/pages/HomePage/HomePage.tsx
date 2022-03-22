@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
   // const HomePage = () => {
   const [data, setData] = useState <[] | Hotel[]>([]);
   const [filteredData, setFilteredData] = useState<[] | Hotel[]>([]);
-  const [capacityAdults, setCapacityAdults] = useState<number>(1);
+  const [capacityAdults, setCapacityAdults] = useState<number>(2);
   const [capacityChildren, setCapacityChildren] = useState<number>(0);
   // const [capacity, setCapacity] = useState({
   //   adults: 1,
