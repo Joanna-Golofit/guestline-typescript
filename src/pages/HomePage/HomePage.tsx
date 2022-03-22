@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
   //   adults: 1,
   //   children: 0,
   // });
-  const stars = Array(5).fill(0);
+  const stars: number[] = Array(5).fill(0);
   const [currentValue, setCurrentValue] = useState<number>(0);
   const [hoverValue, setHoverValue] = useState<number | undefined>(undefined);
   const URL = `https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG`;
