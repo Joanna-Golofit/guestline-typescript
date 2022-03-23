@@ -9,6 +9,11 @@ interface Props {
 }
 
 const Counter: React.FC<Props> = ({ title, value, onClick }) => {
+  
+  const checkQty = () => {
+    value > 0 && onClick(value - 1)
+  }
+  console.log(value);
   return (
     <div className={styles.wrapper}>
       {title}: {""}
@@ -16,7 +21,7 @@ const Counter: React.FC<Props> = ({ title, value, onClick }) => {
         +
       </button>
       {""} {value} {""}
-      <button className={styles.button} onClick={() => onClick(value - 1)}>
+      <button className={styles.button} onClick={() => checkQty()}>
         -
       </button>
     </div>

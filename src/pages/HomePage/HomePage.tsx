@@ -14,8 +14,8 @@ const colors: Colors = {
 };
 
 const HomePage: React.FC = () => {
-  const [data, setData] = useState<[] | Hotel[]>([]);
-  const [filteredData, setFilteredData] = useState<[] | Hotel[]>([]);
+  const [data, setData] = useState<Hotel[]>([]);
+  const [filteredData, setFilteredData] = useState<Hotel[]>([]);
   const [capacityAdults, setCapacityAdults] = useState<number>(2);
   const [capacityChildren, setCapacityChildren] = useState<number>(0);  
   const stars: number[] = Array(5).fill(0);
@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     fetchData(URL)
       .then((fetchedData) => {
-        // console.log("useEffect fetchData data:", fetchedData);
+        // console.log("useEffect fetchData:", fetchedData);
         setData(fetchedData);
         setFilteredData(fetchedData);
       })
