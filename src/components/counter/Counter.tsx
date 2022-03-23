@@ -21,7 +21,12 @@ const Counter: React.FC<Props> = ({ title, value, onClick }) => {
         +
       </button>
       {""} {value} {""}
-      <button className={styles.button} onClick={() => checkQty()}>
+      <button
+        className={
+          value === 0 ? `${styles.buttonDisabled}` : `${styles.button}`
+        }
+        onClick={() => checkQty()}
+      >
         -
       </button>
     </div>

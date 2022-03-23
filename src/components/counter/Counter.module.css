@@ -4,4 +4,13 @@
 .button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
+}
+
+.buttonDisabled {
+  background-color: transparent;
+  border: none;  
+  cursor: default;
+  color: white;
 }
