@@ -8,23 +8,16 @@ import Hotels from "../../components/hotels/Hotels";
 import Counter from "../../components/counter/Counter";
 import { Colors, Hotel } from "../../model";
 
-
-
 const colors: Colors = {
   orange: "#FFBA5A",
   gray: "A9A9A9",
 };
 
-
 const HomePage: React.FC = () => {
-  const [data, setData] = useState <[] | Hotel[]>([]);
+  const [data, setData] = useState<[] | Hotel[]>([]);
   const [filteredData, setFilteredData] = useState<[] | Hotel[]>([]);
   const [capacityAdults, setCapacityAdults] = useState<number>(2);
-  const [capacityChildren, setCapacityChildren] = useState<number>(0);
-  // const [capacity, setCapacity] = useState({
-  //   adults: 1,
-  //   children: 0,
-  // });
+  const [capacityChildren, setCapacityChildren] = useState<number>(0);  
   const stars: number[] = Array(5).fill(0);
   const [currentValue, setCurrentValue] = useState<number>(0);
   const [hoverValue, setHoverValue] = useState<number | undefined>(undefined);

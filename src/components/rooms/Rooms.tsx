@@ -1,12 +1,19 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Room } from "../../model";
 import fetchData from "../../utils/fetchData";
 import styles from "./Rooms.module.css";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-const Rooms = ({ id, capacityChildren, capacityAdults }) => {
-  const [filteredRooms, setFilteredRooms] = useState([]);
+interface Props {
+  id: string;
+  capacityChildren: number;
+  capacityAdults: number;
+}
+
+const Rooms: React.FC<Props> = ({ id, capacityChildren, capacityAdults }) => {
+  const [filteredRooms, setFilteredRooms] = useState<Room[]>([]);
 
   useEffect(() => {
     fetchData(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${id}`)
@@ -14,7 +21,7 @@ const Rooms = ({ id, capacityChildren, capacityAdults }) => {
         // console.log("Rooms data:", fetchedData.rooms);
         setFilteredRooms(
           fetchedData.rooms.filter(
-            (room) =>
+            (room: Room) =>
               Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
               Number(room.occupancy.maxChildren) >= Number(capacityChildren)
           )
@@ -39,10 +46,10 @@ const Rooms = ({ id, capacityChildren, capacityAdults }) => {
   );
 };
 
-Rooms.propTypes = {
-  id: PropTypes.string.isRequired,
-  capacityChildren: PropTypes.number.isRequired,
-  capacityAdults: PropTypes.number.isRequired,
-};
+// Rooms.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   capacityChildren: PropTypes.number.isRequired,
+//   capacityAdults: PropTypes.number.isRequired,
+// };
 
 export default Rooms;

@@ -12,3 +12,13 @@ export interface Colors {
   orange: string;
   gray: string;
 }
+
+export interface Room {
+  id: string;
+  name: string;
+  longDescription: string;
+  occupancy: {
+    maxAdults: number;
+    maxChildren: number
+  };  
+}
