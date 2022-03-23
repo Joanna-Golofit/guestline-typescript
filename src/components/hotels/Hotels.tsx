@@ -3,9 +3,18 @@ import styles from "./Hotels.module.css";
 import { FaStar } from "react-icons/fa";
 import Rooms from "../rooms/Rooms";
 import Slider from "../slider/Slider";
-import PropTypes from "prop-types";
+import { Colors, Hotel } from "../../model";
+// import PropTypes from "prop-types";
 
-const Hotels = ({
+interface Props {
+  filteredData: Hotel[];
+  stars: number[];
+  colors: Colors;
+  capacityChildren: number;
+  capacityAdults: number;
+}
+
+const Hotels: React.FC<Props> = ({
   filteredData,
   stars,
   colors,
@@ -48,12 +57,12 @@ const Hotels = ({
   );
 };
 
-Hotels.propTypes = {
-  filteredData: PropTypes.arrayOf(PropTypes.object).isRequired,
-  stars: PropTypes.arrayOf(PropTypes.number).isRequired,
-  colors: PropTypes.objectOf(PropTypes.string).isRequired,
-  capacityChildren: PropTypes.number.isRequired,
-  capacityAdults: PropTypes.number.isRequired,
-};
+// Hotels.propTypes = {
+//   filteredData: PropTypes.arrayOf(PropTypes.object).isRequired,
+//   stars: PropTypes.arrayOf(PropTypes.number).isRequired,
+//   colors: PropTypes.objectOf(PropTypes.string).isRequired,
+//   capacityChildren: PropTypes.number.isRequired,
+//   capacityAdults: PropTypes.number.isRequired,
+// };
 
 export default Hotels;

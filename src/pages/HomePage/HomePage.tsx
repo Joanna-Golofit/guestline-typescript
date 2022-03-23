@@ -6,29 +6,17 @@ import styles from "./HomePage.module.css";
 import { FaStar } from "react-icons/fa";
 import Hotels from "../../components/hotels/Hotels";
 import Counter from "../../components/counter/Counter";
+import { Colors, Hotel } from "../../model";
 
-type Colors = {
-  orange: string;
-  gray: string;
-};
+
 
 const colors: Colors = {
   orange: "#FFBA5A",
   gray: "A9A9A9",
 };
 
-interface Hotel {
-  id: string;
-  name: string;
-  description: string;
-  images: { url: string }[];
-  starRating: string;
-  address1: string;
-  address2: string;
-}
 
 const HomePage: React.FC = () => {
-  // const HomePage = () => {
   const [data, setData] = useState <[] | Hotel[]>([]);
   const [filteredData, setFilteredData] = useState<[] | Hotel[]>([]);
   const [capacityAdults, setCapacityAdults] = useState<number>(2);
