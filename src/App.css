@@ -15,3 +15,9 @@ img {
   padding: 0;
   margin: 0;
 }
+
+@media screen and (max-width: 560px) {
+  body {
+    font-size: smaller
+  }
+}

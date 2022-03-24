@@ -10,11 +10,21 @@ interface Props {
   id: string;
   capacityChildren: number;
   capacityAdults: number;
+  // renderHotel: boolean;
+  // setRenderHotel: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Rooms: React.FC<Props> = ({ id, capacityChildren, capacityAdults }) => {
-  const [filteredRooms, setFilteredRooms] = useState<Room[]>([]);
-
+const Rooms: React.FC<Props> = ({
+  id,
+  capacityChildren,
+  capacityAdults,
+  // renderHotel,
+  // setRenderHotel,
+}) => {
+  
+ const [filteredRooms, setFilteredRooms] = useState<Room[]>([]);
+ 
+  // 
   useEffect(() => {
     fetchData(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${id}`)
       .then((fetchedData) => {
@@ -26,9 +36,36 @@ const Rooms: React.FC<Props> = ({ id, capacityChildren, capacityAdults }) => {
               Number(room.occupancy.maxChildren) >= Number(capacityChildren)
           )
         );
+
+        // execute(fetchedData);
+
+        // renderHotel !==
+        //   (fetchedData.rooms.filter(
+        //     (room: Room) =>
+        //       Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
+        //       Number(room.occupancy.maxChildren) >= Number(capacityChildren)
+        //   ).length > 0
+        //     ? true
+        //     : false) &&
+        //   setRenderHotel(
+        //     fetchedData.rooms.filter(
+        //       (room: Room) =>
+        //         Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
+        //         Number(room.occupancy.maxChildren) >= Number(capacityChildren)
+        //     ).length > 0
+        //       ? true
+        //       : false
+        //   );
       })
       .catch((err) => console.log("err", err));
-  }, [id, capacityChildren, capacityAdults]);
+  }, [
+    id,
+    capacityChildren,
+    capacityAdults,
+    setFilteredRooms,
+    // setRenderHotel,
+    // renderHotel,
+  ]);
 
   return (
     <>

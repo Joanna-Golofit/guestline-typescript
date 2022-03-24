@@ -8,10 +8,23 @@
 .left {
   width: 28%;
   margin-right: 10px;
+  margin-bottom: 15px;
 }
 .right {
   width: 72%;
 }
 h4 {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
 }

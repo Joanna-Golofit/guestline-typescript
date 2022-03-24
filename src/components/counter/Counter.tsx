@@ -13,7 +13,7 @@ const Counter: React.FC<Props> = ({ title, value, onClick }) => {
   const checkQty = () => {
     value > 0 && onClick(value - 1)
   }
-  console.log(value);
+  // console.log(value);
   return (
     <div className={styles.wrapper}>
       {title}: {""}
