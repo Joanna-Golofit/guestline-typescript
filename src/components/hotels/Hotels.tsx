@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Hotels.module.css";
 import { FaStar } from "react-icons/fa";
 import Rooms from "../rooms/Rooms";
