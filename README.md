@@ -4,7 +4,7 @@
 `npm i` 
 shall be enough to build the project,
 
-:orange_circle: you can see it [here](jg-guestline.netlify.app/)
+:orange_circle: you can see it [here](https://jg-guestline.netlify.app/)
 
 
 by <a href="https://github.com/Joanna-Golofit">![GitHub](https://img.shields.io/badge/-Joanna--Golofit-05122A?style=flat&logo=github)</a> 
