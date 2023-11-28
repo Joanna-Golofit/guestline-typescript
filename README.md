@@ -1,3 +1,10 @@
+Guests using the site are able to:
+- filter based on the star rating of the hotel and the capacity of the room,
+- view images of the displayed hotel, hotel room details
+
+
+
+
 ## General info
 
 :star: 
