@@ -60,11 +60,3 @@ For other requirements, please see the attached [mockup sketch](https://gxpservi
 Please approach this challenge like you would any work task, and importantly keep things simple.
 
 
-
-Submitting your solution
-
-
-
-We expect to build your submission locally and review it's code. If you host it publicly let us know, but that's not necessary. Please send us source code (preferably a link to a public repository) with instructions on how to build it in a readme file Readme.md. We will always provide feedback about your work.
-
-
